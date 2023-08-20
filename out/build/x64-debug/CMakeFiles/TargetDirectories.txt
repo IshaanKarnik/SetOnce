@@ -1,0 +1,7 @@
+C:/Users/IshaanKarnik/source/repos/SetOnce/out/build/x64-debug/CMakeFiles/edit_cache.dir
+C:/Users/IshaanKarnik/source/repos/SetOnce/out/build/x64-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/IshaanKarnik/source/repos/SetOnce/out/build/x64-debug/SetOnce/CMakeFiles/edit_cache.dir
+C:/Users/IshaanKarnik/source/repos/SetOnce/out/build/x64-debug/SetOnce/CMakeFiles/rebuild_cache.dir
+C:/Users/IshaanKarnik/source/repos/SetOnce/out/build/x64-debug/SetOnceExample/CMakeFiles/SetOnceExample.dir
+C:/Users/IshaanKarnik/source/repos/SetOnce/out/build/x64-debug/SetOnceExample/CMakeFiles/edit_cache.dir
+C:/Users/IshaanKarnik/source/repos/SetOnce/out/build/x64-debug/SetOnceExample/CMakeFiles/rebuild_cache.dir

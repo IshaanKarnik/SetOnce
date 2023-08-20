@@ -1,0 +1,153 @@
+\doxysection{set\+\_\+once\+::Set\+Once\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classset__once_1_1_set_once}{}\label{classset__once_1_1_set_once}\index{set\_once::SetOnce$<$ T $>$@{set\_once::SetOnce$<$ T $>$}}
+
+
+This class allows teh object to be initialized only once but can be read any number of times.  
+
+
+
+
+{\ttfamily \#include $<$Set\+Once.\+hxx$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+T \mbox{\hyperlink{classset__once_1_1_set_once_a94ceb5ec7a69f6bd3d227cd7ddc6910c}{get}} (void) const
+\begin{DoxyCompactList}\small\item\em Returns previously stored data by value. If data is not been set throw data not set exception (\doxylink{classset__once_1_1_data_not_set_exception}{Data\+Not\+Set\+Exception}) \end{DoxyCompactList}\item 
+const T \& \mbox{\hyperlink{classset__once_1_1_set_once_aa307321b8b067d8fa988d5bb9a04864b}{get\+\_\+const\+\_\+reference}} (void) const
+\begin{DoxyCompactList}\small\item\em Returns previously stored data as constant reference. If data is not been set throw data not set exception (\doxylink{classset__once_1_1_data_not_set_exception}{Data\+Not\+Set\+Exception}) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classset__once_1_1_set_once_a15617f9ec7eba6c8e461d6c8f7d2eddc}{set}} (const T \&data)
+\begin{DoxyCompactList}\small\item\em Sets/\+Initializes the value to the \doxylink{classset__once_1_1_set_once}{Set\+Once} object. This method only runs onces. Any subsequent rus have no effect. on the previously stored value. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classset__once_1_1_set_once_a73b56a9e86ecce688fe1847d3cad322c}{is\+\_\+set}} (void) const
+\begin{DoxyCompactList}\small\item\em This method checks if the valoe has been set for the \doxylink{classset__once_1_1_set_once}{Set\+Once} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class set\+\_\+once\+::\+Set\+Once$<$ T $>$}
+This class allows teh object to be initialized only once but can be read any number of times. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Any} & Plain Old Data (POD) \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classset__once_1_1_set_once_a94ceb5ec7a69f6bd3d227cd7ddc6910c}\label{classset__once_1_1_set_once_a94ceb5ec7a69f6bd3d227cd7ddc6910c} 
+\index{set\_once::SetOnce$<$ T $>$@{set\_once::SetOnce$<$ T $>$}!get@{get}}
+\index{get@{get}!set\_once::SetOnce$<$ T $>$@{set\_once::SetOnce$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \mbox{\hyperlink{classset__once_1_1_set_once}{set\+\_\+once\+::\+Set\+Once}}$<$ T $>$\+::get (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns previously stored data by value. If data is not been set throw data not set exception (\doxylink{classset__once_1_1_data_not_set_exception}{Data\+Not\+Set\+Exception}) 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Any} & POD where data can be stored \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the value that was previously set. 
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Author}
+Ishaan Karnik 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+20-\/08-\/2023 
+\end{DoxyDate}
+\Hypertarget{classset__once_1_1_set_once_aa307321b8b067d8fa988d5bb9a04864b}\label{classset__once_1_1_set_once_aa307321b8b067d8fa988d5bb9a04864b} 
+\index{set\_once::SetOnce$<$ T $>$@{set\_once::SetOnce$<$ T $>$}!get\_const\_reference@{get\_const\_reference}}
+\index{get\_const\_reference@{get\_const\_reference}!set\_once::SetOnce$<$ T $>$@{set\_once::SetOnce$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{get\_const\_reference()}{get\_const\_reference()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+const T \& \mbox{\hyperlink{classset__once_1_1_set_once}{set\+\_\+once\+::\+Set\+Once}}$<$ T $>$\+::get\+\_\+const\+\_\+reference (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns previously stored data as constant reference. If data is not been set throw data not set exception (\doxylink{classset__once_1_1_data_not_set_exception}{Data\+Not\+Set\+Exception}) 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Any} & POD where data can be stored \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the value that was previously set as constant reference. 
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Author}
+Ishaan Karnik 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+20-\/08-\/2023 
+\end{DoxyDate}
+\Hypertarget{classset__once_1_1_set_once_a73b56a9e86ecce688fe1847d3cad322c}\label{classset__once_1_1_set_once_a73b56a9e86ecce688fe1847d3cad322c} 
+\index{set\_once::SetOnce$<$ T $>$@{set\_once::SetOnce$<$ T $>$}!is\_set@{is\_set}}
+\index{is\_set@{is\_set}!set\_once::SetOnce$<$ T $>$@{set\_once::SetOnce$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{is\_set()}{is\_set()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool \mbox{\hyperlink{classset__once_1_1_set_once}{set\+\_\+once\+::\+Set\+Once}}$<$ T $>$\+::is\+\_\+set (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+This method checks if the valoe has been set for the \doxylink{classset__once_1_1_set_once}{Set\+Once} object. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Any} & POD where data can be stored \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True or False depending on whether the value has been set. 
+\end{DoxyReturn}
+\Hypertarget{classset__once_1_1_set_once_a15617f9ec7eba6c8e461d6c8f7d2eddc}\label{classset__once_1_1_set_once_a15617f9ec7eba6c8e461d6c8f7d2eddc} 
+\index{set\_once::SetOnce$<$ T $>$@{set\_once::SetOnce$<$ T $>$}!set@{set}}
+\index{set@{set}!set\_once::SetOnce$<$ T $>$@{set\_once::SetOnce$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{set()}{set()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classset__once_1_1_set_once}{set\+\_\+once\+::\+Set\+Once}}$<$ T $>$\+::set (\begin{DoxyParamCaption}\item[{const T \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets/\+Initializes the value to the \doxylink{classset__once_1_1_set_once}{Set\+Once} object. This method only runs onces. Any subsequent rus have no effect. on the previously stored value. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Any} & POD where data can be stored \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em Data} & to be stored \\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+Ishaan Karnik 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+20-\/08-\/2023 
+\end{DoxyDate}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Ishaan\+Karnik/source/repos/\+Set\+Once/\+Set\+Once/\mbox{\hyperlink{_set_once_8hxx}{Set\+Once.\+hxx}}\end{DoxyCompactItemize}

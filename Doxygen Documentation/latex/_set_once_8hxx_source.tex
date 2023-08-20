@@ -1,0 +1,99 @@
+\doxysection{Set\+Once.\+hxx}
+\hypertarget{_set_once_8hxx_source}{}\label{_set_once_8hxx_source}\index{C:/Users/IshaanKarnik/source/repos/SetOnce/SetOnce/SetOnce.hxx@{C:/Users/IshaanKarnik/source/repos/SetOnce/SetOnce/SetOnce.hxx}}
+\mbox{\hyperlink{_set_once_8hxx}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <mutex>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <atomic>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{namespace\ }set\_once}
+\DoxyCodeLine{00011\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classset__once_1_1_data_not_set_exception}{DataNotSetException}}\ :\ \textcolor{keyword}{public}\ std::exception}
+\DoxyCodeLine{00014\ \ \ \ \ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ message\{\ \textcolor{stringliteral}{"{}Data\ Not\ Set\ before\ Get\ Operation"{}}\ \};}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{classset__once_1_1_data_not_set_exception_a1502c57189c872b9d43d3af0c6a25b6d}{what}}()\textcolor{keyword}{\ const\ override}}
+\DoxyCodeLine{00021\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ message;}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00024\ \ \ \ \ \};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classset__once_1_1_set_once}{SetOnce}}}
+\DoxyCodeLine{00030\ \ \ \ \ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ T\ data;}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ std::once\_flag\ flag;}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ std::atomic\_bool\ data\_set\{\ \textcolor{keyword}{false}\ \};}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ do\_once(\textcolor{keyword}{const}\ T\&\ data);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#ifdef\ DELETE\_COPY\_CONSTRUCTOR}}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classset__once_1_1_set_once}{SetOnce}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classset__once_1_1_set_once}{SetOnce}}\&\ copy\_from\_me)\ =\ \textcolor{keyword}{delete};\ \textcolor{comment}{//Delete\ Copy\ Constructor}}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classset__once_1_1_set_once}{SetOnce}}\&\ operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classset__once_1_1_set_once}{SetOnce}}\&\ copy\_assign\_from\_me)\ =\ \textcolor{keyword}{delete};\ \textcolor{comment}{//\ Delete\ copy-\/assignments}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DELETE\_COPY\_CONSTRUCTOR}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#ifdef\ DELETE\_MOVE\_CONSTRUCTOR}}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classset__once_1_1_set_once}{SetOnce}}(\mbox{\hyperlink{classset__once_1_1_set_once}{SetOnce}}\&\&\ move\_from\_me)\ =\ \textcolor{keyword}{delete};\ \textcolor{comment}{//Delete\ Move\ constructor}}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classset__once_1_1_set_once}{SetOnce}}\&\ operator=(\mbox{\hyperlink{classset__once_1_1_set_once}{SetOnce}}\&\&\ move\_assign\_from\_me)\ =\ \textcolor{keyword}{delete};\ \textcolor{comment}{//Delete\ Move\ assignment\ operator}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DELETE\_MOVE\_CONSTRUCTOR}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ T\ \mbox{\hyperlink{classset__once_1_1_set_once_a94ceb5ec7a69f6bd3d227cd7ddc6910c}{get}}(\textcolor{keywordtype}{void})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ T\&\ \mbox{\hyperlink{classset__once_1_1_set_once_aa307321b8b067d8fa988d5bb9a04864b}{get\_const\_reference}}(\textcolor{keywordtype}{void})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classset__once_1_1_set_once_a15617f9ec7eba6c8e461d6c8f7d2eddc}{set}}(\textcolor{keyword}{const}\ T\&\ data);}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classset__once_1_1_set_once_a73b56a9e86ecce688fe1847d3cad322c}{is\_set}}(\textcolor{keywordtype}{void})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00052\ \ \ \ \ \};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classset__once_1_1_set_once}{SetOnce<T>::do\_once}}(\textcolor{keyword}{const}\ T\&\ data)}
+\DoxyCodeLine{00056\ \ \ \ \ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ this-\/>data\ =\ data;}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ this-\/>data\_set.store(\textcolor{keyword}{true});}
+\DoxyCodeLine{00059\ \ \ \ \ \}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{inline}\ T\ \mbox{\hyperlink{classset__once_1_1_set_once_a94ceb5ec7a69f6bd3d227cd7ddc6910c}{SetOnce<T>::get}}(\textcolor{keywordtype}{void})\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00070\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>is\_set()\ ==\ \textcolor{keyword}{true})}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>data;}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{classset__once_1_1_data_not_set_exception}{DataNotSetException}}();}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00079\ \ \ \ \ \}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ T\&\ \mbox{\hyperlink{classset__once_1_1_set_once_aa307321b8b067d8fa988d5bb9a04864b}{SetOnce<T>::get\_const\_reference}}(\textcolor{keywordtype}{void})\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00089\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>is\_set()\ ==\ \textcolor{keyword}{true})}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>data;}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{classset__once_1_1_data_not_set_exception}{DataNotSetException}}();}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00098\ \ \ \ \ \}}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classset__once_1_1_set_once_a15617f9ec7eba6c8e461d6c8f7d2eddc}{SetOnce<T>::set}}(\textcolor{keyword}{const}\ T\&\ data)}
+\DoxyCodeLine{00107\ \ \ \ \ \{}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ std::call\_once(this-\/>flag,\ \&SetOnce::do\_once,\ \textcolor{keyword}{this},\ data);}
+\DoxyCodeLine{00109\ \ \ \ \ \}}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classset__once_1_1_set_once_a73b56a9e86ecce688fe1847d3cad322c}{SetOnce<T>::is\_set}}(\textcolor{keywordtype}{void})\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00117\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>data\_set.load();}
+\DoxyCodeLine{00119\ \ \ \ \ \}}
+\DoxyCodeLine{00120\ \}}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ }
+
+\end{DoxyCode}

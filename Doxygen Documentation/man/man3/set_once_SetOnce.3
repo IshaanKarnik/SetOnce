@@ -1,0 +1,161 @@
+.TH "set_once::SetOnce< T >" 3Version 2.0.0" "SetOnce" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+set_once::SetOnce< T > \- This class allows teh object to be initialized only once but can be read any number of times\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SetOnce\&.hxx>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "T \fBget\fP (void) const"
+.br
+.RI "Returns previously stored data by value\&. If data is not been set throw data not set exception (\fBDataNotSetException\fP) "
+.ti -1c
+.RI "const T & \fBget_const_reference\fP (void) const"
+.br
+.RI "Returns previously stored data as constant reference\&. If data is not been set throw data not set exception (\fBDataNotSetException\fP) "
+.ti -1c
+.RI "void \fBset\fP (const T &data)"
+.br
+.RI "Sets/Initializes the value to the \fBSetOnce\fP object\&. This method only runs onces\&. Any subsequent rus have no effect\&. on the previously stored value\&. "
+.ti -1c
+.RI "bool \fBis_set\fP (void) const"
+.br
+.RI "This method checks if the valoe has been set for the \fBSetOnce\fP object\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<typename T>
+.br
+class set_once::SetOnce< T >"This class allows teh object to be initialized only once but can be read any number of times\&. 
+
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIAny\fP Plain Old Data (POD) 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "template<typename T > T \fBset_once::SetOnce\fP< T >::get (void) const\fC [inline]\fP"
+
+.PP
+Returns previously stored data by value\&. If data is not been set throw data not set exception (\fBDataNotSetException\fP) 
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIAny\fP POD where data can be stored 
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Returns the value that was previously set\&. 
+.RE
+.PP
+\fBAuthor\fP
+.RS 4
+Ishaan Karnik 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+20-08-2023 
+.RE
+.PP
+
+.SS "template<typename T > const T & \fBset_once::SetOnce\fP< T >::get_const_reference (void) const\fC [inline]\fP"
+
+.PP
+Returns previously stored data as constant reference\&. If data is not been set throw data not set exception (\fBDataNotSetException\fP) 
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIAny\fP POD where data can be stored 
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Returns the value that was previously set as constant reference\&. 
+.RE
+.PP
+\fBAuthor\fP
+.RS 4
+Ishaan Karnik 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+20-08-2023 
+.RE
+.PP
+
+.SS "template<typename T > bool \fBset_once::SetOnce\fP< T >::is_set (void) const\fC [inline]\fP"
+
+.PP
+This method checks if the valoe has been set for the \fBSetOnce\fP object\&. 
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIAny\fP POD where data can be stored 
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True or False depending on whether the value has been set\&. 
+.RE
+.PP
+
+.SS "template<typename T > void \fBset_once::SetOnce\fP< T >::set (const T & data)\fC [inline]\fP"
+
+.PP
+Sets/Initializes the value to the \fBSetOnce\fP object\&. This method only runs onces\&. Any subsequent rus have no effect\&. on the previously stored value\&. 
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIAny\fP POD where data can be stored 
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fIData\fP to be stored 
+.RE
+.PP
+\fBAuthor\fP
+.RS 4
+Ishaan Karnik 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+20-08-2023 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SetOnce from the source code\&.

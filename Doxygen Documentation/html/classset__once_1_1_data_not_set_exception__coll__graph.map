@@ -1,0 +1,5 @@
+<map id="set_once::DataNotSetException" name="set_once::DataNotSetException">
+<area shape="rect" id="Node000001" title="This class is used to throw excetion stating data nas not been set for the SetOnce object." alt="" coords="5,80,213,107"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="57,5,161,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="112,47,112,80,106,80,106,47"/>
+</map>
