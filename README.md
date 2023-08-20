@@ -1,6 +1,6 @@
 # SetOnce
 
-SetOnce is a header ony library that allows you to initialize the value of an object only once.
+SetOnce is a header ony library that allows you to initialize the value of an object only once i.e. single-assignment. Once assigned a value, a final variable's value cannot be changed.
 
 Build enviroment must support C++11 standard.
 
