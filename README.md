@@ -15,6 +15,13 @@ Build enviroment must support C++11 standard.
 * Uses modern CMake; alternatively can be used wothout CMake by just adding the header file to source-code
 * Only C++11 support required
 
+### Use Cases
+
+* Store Configuration Data
+* Store Calibration Data
+* Store Compensation Data
+* Any Data that needs to be stored/written only once but read overtime throughout the lifetime of program 
+
 ### Usage
 
 1. Import Library Header
